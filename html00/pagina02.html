@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="demo" border="2"></table>
+
+    <script>
+        loadTXTDoc()
+
+        function loadXMLDoc() {
+                console.log("Iniciando Lectura")
+            const xhttp = new XMLHttpRequest();
+                console.log(xhttp)  
+            xhttp.onload = function() {
+                const xmlDoc = xhttp.responseXML;
+                const cd = xmlDoc.getElementsByTagName("CD");
+                myFunction(cd);
+                console.log(xhttp)  
+            }
+            xhttp.open("GET", "cd_catalog.xml");
+            xhttp.send();
+                console.log("Saliendo de la Lectura")
+        }   
+
+        function loadTXTDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                const textData = xhttp.responseText;
+                const lines = textData.trim().split("\n"); // separa línea por línea
+                myFunction(lines);
+            }
+            xhttp.open("GET", "Personas.txt");
+            xhttp.send();
+        }
+
+        function myFunction(lines) {
+            let table = "<tr><th>Personajes Videojuegos</th></tr>";
+            for (let i = 0; i < lines.length; i++) {
+                table += "<tr><td>" + lines[i].trim() + "</td></tr>";
+            }
+            document.getElementById("demo").innerHTML = table;
+        }
+
+        //function myFunction(cd) {
+        //    let table="<tr><th>Artist</th><th>Title</th></tr>";
+        //    for (let i = 0; i < cd.length; i++) {
+        //        table += "<tr><td>" +
+        //        cd[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+         //       "</td><td>" +
+         //       cd[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+         //       "</td></tr>";
+         //   }
+       //     document.getElementById("demo").innerHTML = table;
+       // }
+    </script>
+
+</body>
+
+</html>
