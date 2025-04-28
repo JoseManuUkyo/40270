@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE alumnos [
+    <!ELEMENT alumno (nombre, nacimiento)>
+    <!ELEMENT alumno (#PCDATA)>
+    <!ELEMENT nacimiento (#PCDATA)>
+]>
+<alumnos>
+    <alumno>
+        <nombre>Eren Yeager</nombre>
+        <nacimiento>30-03-835</nacimiento>
+    </alumno>
+    <alumno>
+        <nombre>Mikasa Ackerman</nombre>
+        <nacimiento>10-02-835</nacimiento>
+    </alumno>
+</alumnos>

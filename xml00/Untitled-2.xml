@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE alumnos [
+    <!ELEMENT alumnos (alumno*)>
+    <!ELEMENT alumno (nombre)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ATTLIST alumno id ID #REQUIRED
+    edad CDATA #IMPLIED
+    becado (si|no) "no">
+]>
+<alumnos>
+    <alumno>
+        <nombre>Eren Yeager</nombre>
+        <nacimiento>30-03-835</nacimiento>
+    </alumno>
+    <alumno>
+        <nombre>Mikasa Ackerman</nombre>
+        <nacimiento>10-02-835</nacimiento>
+    </alumno>
+</alumnos>
