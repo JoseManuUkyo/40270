@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            box-shadow: 10px 20px 20px rgb(55, 202, 210) ;
+            width: 400px; ;
+        }
+        figure{
+            display: inline-block;
+            text-align: center;
+        }
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- h1{Ramdom Picture}(figure>img[src="https://picsum.com/id/$/200/200"]+figcaption)*2 -->
+    <h1>Random Picture</h1>
+    <div id="app">
+        <!--<figure>
+            <img src="https://picsum.photos/id/200/200" alt="John Cena">
+            <figcaption>John Cena Cenanation</figcaption> 
+        </figure>
+        <figure>    
+            <img src="https://picsum.photos/id/200/200" alt="Jill Valentine">
+            <figcaption> Valentine</figcaption>
+        </figure> -->
+    </div>
+
+    <script>
+        // a continuacion se usara el api DOM de Javascript usar siempre parentesis
+        console.log("imprime mensaje a la consola")
+
+        const x = document.getElementById("app")
+        console.log(x)
+
+        //x.innerHTML = imagen(1) + imagen(2) + imagen(3)
+        
+        //for (let i = 1; i<10; i++){
+        //    x.innerHTML = x.innerHTML + xy(i)
+        //}
+
+        function imagen(id) {
+            const c = '<figure>' +
+                '<img src="https://picsum.photos/id/'+id+'/200/200" alt="John Cena">' +
+                '<figcaption>John Cena Cenanation</figcaption>' + 
+            '</figure>' +
+            '<figure>' + 
+                '<img src="https://picsum.photos/id/'+id+'/200/200" alt="Jill Valentine">' +
+                '<figcaption> Jill Valentine</figcaption>' +
+            '</figure>'
+            return c
+        }
+
+
+        
+        //const Picture = function ( ){ return "hola "}
+        //funcion anonima de tipo arrow function asignada la constante Picture
+        //const Picture = () => {return "hola "}
+        //const Picture = () => "hola "
+        const Picture = (id) => {
+        //Ayudan a crear plantillas o templates usando la comilla invertida (` )
+            return `<figure>
+                <img src="https://picsum.photos/id/${id}/200/200" alt="John Cena">
+                <figcaption>John Cena Cenanation</figcaption> 
+            </figure>
+            <figure>    
+                <img src="https://picsum.photos/id/${id}/200/200" alt="Jill Valentine">
+                <figcaption> Valentine</figcaption>
+            </figure>`
+        };
+        //Cuidar que Picture ya este inicializada
+        x.innerHTML = Picture(1) + Picture(2) + Picture(3) + Picture(4)
+    </script>
+    
+</body>
+</html>
