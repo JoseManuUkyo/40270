@@ -1,0 +1,5 @@
+document.getElementById("app")
+console.log(d("abc"))
+console.log(dd("def"))
+console.log(m("ghi"))
+console.log(c("jkl"))
